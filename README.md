@@ -37,7 +37,7 @@ _In this application, you experience how powerful the term API is and you also g
 * _No detected bugs_
 * _The one bug you will definitely encounter is if you fail to follow any of the Setup/Installation Information I gave you_
 * _Note: as at the launch of this Application there are no bugs but this is not the finished product as I will be adding more features later on. If anyone comes in contact with a bug, be sure to hit me up on social media or email me @emzzyoluwole@gmail.com._
-* _The Much announced 1.3.0 version of application is around now. Here I made use of Async and Await functions and not fetch like I did in version 1.2.0_
+* _The Much announced 1.3.0 version of application is around now. Here I made use of Async and Await functions with fetch unlike I did in version 1.2.0 where I used just fetch and .then() to handle the results_
 * _P.S: two javaScript logic files where used here_
 
 ## WebLink
