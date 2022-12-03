@@ -39,7 +39,7 @@ export class WeatherService {
         // all what worked for the first class is the same thing that would be executed here also, next we update our UI logic file
 
         export class CountryWeatherService {
-            static getCountryWeather(country) {
+            static async getCountryWeather(country) {
                 // return fetch(`http://api.openweathermap.org/data/2.5/weather?q=${country}&appid=${process.env.API_KEY}`)
                 //     .then(function (countryResponse) {
                 //         if (!countryResponse.ok) {
@@ -53,6 +53,17 @@ export class WeatherService {
 
                 try{
                     const myCountryResponse = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${country}&appid=${process.env.API_KEY}`);
+                    // a branch to determine whether my response has an ok property or not
+                    if(!myCountryResponse.ok){
+                        // if there isn't an ok property in my myCountryResponse, throw in an error
+                        throw Error(myCountryResponse.statusText);
+                    }
+                    // if there is an ok property, return me myCountryResponse but make sure you call the .json() method on it to ensure JavaScript can understand it
+                    return myCountryResponse.json();
+
+                } catch (countryError){
+                    // the catch block would help me handle the errors and display to me the "message" key in my error object 
+                    return countryError.message;
                 }
             }
         }
