@@ -40,16 +40,20 @@ export class WeatherService {
 
         export class CountryWeatherService {
             static getCountryWeather(country) {
-                return fetch(`http://api.openweathermap.org/data/2.5/weather?q=${country}&appid=${process.env.API_KEY}`)
-                    .then(function (countryResponse) {
-                        if (!countryResponse.ok) {
-                            throw Error(response.statusText);
-                        }
-                        return countryResponse.json();
-                    }) // didn't add a semi colon here because it threw an error, but when I added it to the end of the catch block everything was fine
-                    .catch(function (error) {
-                        return error;
-                    })
+                // return fetch(`http://api.openweathermap.org/data/2.5/weather?q=${country}&appid=${process.env.API_KEY}`)
+                //     .then(function (countryResponse) {
+                //         if (!countryResponse.ok) {
+                //             throw Error(countryResponse.statusText);
+                //         }
+                //         return countryResponse.json();
+                //     }) // didn't add a semi colon here because it threw an error, but when I added it to the end of the catch block everything was fine
+                //     .catch(function (error) {
+                //         return error.message;
+                //     })
+
+                try{
+                    const myCountryResponse = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${country}&appid=${process.env.API_KEY}`);
+                }
             }
         }
 
