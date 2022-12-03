@@ -21,36 +21,10 @@ export class WeatherService {
     }
 }
 
-        // export default class WeatherService {
-        //     static async getWeather(city) {
-        //         try {
-        //             const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.API_KEY}`);
-        //             if (!response.ok) {
-        //                 throw Error(response.statusText);
-        //             }
-        //             return response.json();
-        //         } catch (error) {
-        //             return error.message;
-        //         }
-        //     }
-        // }
-
-
         // all what worked for the first class is the same thing that would be executed here also, next we update our UI logic file
 
         export class CountryWeatherService {
             static async getCountryWeather(country) {
-                // return fetch(`http://api.openweathermap.org/data/2.5/weather?q=${country}&appid=${process.env.API_KEY}`)
-                //     .then(function (countryResponse) {
-                //         if (!countryResponse.ok) {
-                //             throw Error(countryResponse.statusText);
-                //         }
-                //         return countryResponse.json();
-                //     }) // didn't add a semi colon here because it threw an error, but when I added it to the end of the catch block everything was fine
-                //     .catch(function (error) {
-                //         return error.message;
-                //     })
-
                 try{
                     const myCountryResponse = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${country}&appid=${process.env.API_KEY}`);
                     // a branch to determine whether my response has an ok property or not
