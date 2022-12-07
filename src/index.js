@@ -60,10 +60,11 @@ $(document).ready(() => {
         // now we're working with callbacks, we're back to writing(callbacks) a function that would be called to show user values of temperature
         // makeFirstApiCall(city);
 
-        // If you're not a fan of IIFE like me, you can comment this IIFE function, ncomment both the 
+        // If you're not a fan of IIFE unlike me, you can comment this IIFE function, uncomment both the 
         // calling of the makeFirstApiCall() function above and also uncomment where I wrote the function down below
         // it would still work and don't get scared; I personally tried both
 
+        // the code below runs asynchronous codes as if it were a synchronous one all thanks to the IIFE syntax used
         (async function () {
             const response = await WeatherService.getWeather(city);
             getMyWeatherValues(response);
@@ -150,6 +151,8 @@ $(document).ready(() => {
         // no more .then's in UI logic file to handle a resolved or a rejected promise
         // all thanks to Async and Awake functions
 
+        // the code below runs asynchronous codes as if it were a synchronous one all thanks to the IIFE syntax used
+        
         async function makeSecondApiCall(country) {
             const countryResponse = await CountryWeatherService.getCountryWeather(country);
             getMyCountryWeatherValues(countryResponse);
